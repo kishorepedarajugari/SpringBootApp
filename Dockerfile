@@ -1,4 +1,9 @@
-FROM openjdk:17-jdk-slim
-WORKDIR /app1
-COPY target/*.jar /app1
-ENTRYPOINT ["java","-jar","BootApp1"]
+FROM eclipse-temurin:17-jre-jammy
+
+WORKDIR /app
+
+COPY app.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","app.jar"]
